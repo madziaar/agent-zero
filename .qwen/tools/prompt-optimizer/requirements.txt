@@ -1,0 +1,12 @@
+# Requirements for Qwen Prompt Optimizer
+
+# No external dependencies required for basic functionality
+# The tool is designed to work with standard Python libraries
+
+# Optional: For enhanced text analysis (if needed in future)
+# nltk>=3.8
+# spacy>=3.0
+
+# Optional: For machine learning-based optimization (if needed in future)
+# scikit-learn>=1.0
+# torch>=1.0

@@ -62,6 +62,11 @@ chat:
     litellm_provider: openai
     kwargs:
       api_base: https://api.venice.ai/api/v1
+  qwen:
+    name: Qwen (Alibaba Cloud)
+    litellm_provider: openai
+    kwargs:
+      api_base: https://dashscope.aliyuncs.com/compatible-mode/v1
   other:
     name: Other OpenAI compatible
     litellm_provider: openai

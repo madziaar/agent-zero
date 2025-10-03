@@ -6,6 +6,9 @@
 
 #Ignore cursor rules
 .cursor/
+# Ignore history backup directory
+.history/
+
 
 # ignore test files in root dir
 /*.test.py

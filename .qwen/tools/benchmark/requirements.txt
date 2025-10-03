@@ -1,0 +1,19 @@
+# Requirements for Qwen Benchmark Tools
+
+# No external dependencies required for basic functionality
+# The tool is designed to work with standard Python libraries
+
+# Optional: For enhanced statistical analysis (if needed in future)
+# numpy>=1.21
+# pandas>=1.3
+
+# Optional: For advanced performance monitoring (if needed in future)
+# psutil>=5.8
+# memory_profiler>=0.60
+
+# Optional: For API integrations (if needed in future)
+# requests>=2.26
+
+# Optional: For data visualization (if needed in future)
+# matplotlib>=3.5
+# plotly>=5.0
