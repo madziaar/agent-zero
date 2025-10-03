@@ -9,6 +9,13 @@
 # Ignore history backup directory
 .history/
 
+# Ignore development artifacts and backup directories
+.qwen/
+prompts_backup/
+
+# Ignore VSCode temporary files
+.continue/
+
 
 # ignore test files in root dir
 /*.test.py
