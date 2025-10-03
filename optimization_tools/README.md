@@ -1,90 +1,98 @@
 # Agent Zero Optimization Tools
 
-This directory contains a collection of tools designed to analyze, optimize, and maintain the Agent Zero codebase. These tools help identify inefficiencies, reorganize code, and provide ongoing maintenance capabilities.
+This directory contains tools created to analyze, optimize, and maintain the Agent Zero codebase. These tools help identify inefficiencies, clean up redundancies, and maintain a well-organized project structure.
 
-## Tools Overview
+## Available Tools
 
-### 1. `cleanup_caches.py`
+### 1. cleanup_caches.py
 
-**Purpose**: Removes Python cache files and other temporary artifacts that can accumulate over time.
-
-**Features**:
-- Cleans up `__pycache__` directories
-- Removes `.pyc`, `.pyo`, and other Python cache files
-- Cleans test artifacts (`.pytest_cache`, `.coverage`, etc.)
-- Preserves Git directories and important project files
+**Purpose**: Removes Python cache files and other temporary artifacts that can accumulate during development.
 
 **Usage**:
 ```bash
-python cleanup_caches.py
+python optimization_tools/cleanup_caches.py
 ```
 
-### 2. `organize_prompts.py`
-
-**Purpose**: Analyzes and reorganizes the prompt files in the `prompts/` directory for better organization.
-
 **Features**:
-- Categorizes prompt files by type (system, framework, memory, etc.)
-- Suggests a more logical directory structure
-- Creates backups before making changes
-- Interactive mode for user confirmation
+- Removes `__pycache__` directories
+- Cleans `.pyc` and `.pyo` files
+- Removes test artifacts
+- Preserves important project files
+
+### 2. organize_prompts.py
+
+**Purpose**: Analyzes and reorganizes prompt files into a logical structure.
 
 **Usage**:
 ```bash
-python organize_prompts.py
+python optimization_tools/organize_prompts.py
 ```
 
-### 3. `analyze_agents.py`
-
-**Purpose**: Analyzes agent profile directories to identify patterns, redundancies, and standardization opportunities.
-
 **Features**:
-- Compares file structures across agent profiles
-- Identifies identical files that could be consolidated
-- Detects divergent prompt files that might need standardization
-- Suggests a standard template for new agent profiles
-- Exports detailed analysis as JSON
+- Analyzes prompt files and categorizes them
+- Suggests an improved directory structure
+- Creates backups before moving files
+- Interactive mode for selective implementation
+
+### 3. analyze_agents.py
+
+**Purpose**: Examines agent profile directories to identify redundancies and standardization opportunities.
 
 **Usage**:
 ```bash
-python analyze_agents.py
+python optimization_tools/analyze_agents.py
 ```
 
-## Using the Tools Together
+**Features**:
+- Analyzes agent profile structures
+- Identifies common files across agents
+- Detects unique customizations
+- Suggests standardization improvements
 
-These tools are designed to be used as part of a comprehensive optimization strategy:
+## Using These Tools
 
-1. Start with `cleanup_caches.py` to remove temporary files and reduce clutter
-2. Use `analyze_agents.py` to understand the current structure and identify opportunities for standardization
-3. Apply `organize_prompts.py` to improve the organization of system prompts
-4. Implement the recommendations from the analysis results
-5. Run `cleanup_caches.py` regularly as part of ongoing maintenance
+### Regular Maintenance
 
-## Best Practices
+We recommend running these tools periodically as part of your development workflow:
 
-- Run `cleanup_caches.py` before committing changes to avoid including cache files in version control
-- Use `analyze_agents.py` when creating new agent profiles to ensure consistency
-- After reorganizing prompts with `organize_prompts.py`, test thoroughly to ensure all systems function correctly
-- Consider adding these tools to CI/CD pipelines or development workflows
-- Refer to the main `OPTIMIZATION.md` document for broader optimization strategies
+1. Run `cleanup_caches.py` before commits or when switching branches
+2. Run `analyze_agents.py` when creating new agent profiles
+3. Run `organize_prompts.py` when adding new prompt files
 
-## Safety Considerations
+### Automation
 
-- The tools create backups before making changes to important files
-- Interactive confirmation is requested before applying structural changes
-- Always test the system after reorganization to verify functionality
-- Consider running tools in a development environment before applying to production
+Consider automating these tools as part of your CI/CD pipeline or git hooks:
 
-## Contributing
+```bash
+# Example pre-commit hook
+#!/bin/bash
+python optimization_tools/cleanup_caches.py
+```
 
-To enhance these optimization tools:
+### Best Practices
 
-1. Add new cleanup patterns to `cleanup_caches.py` as needed
-2. Improve categorization logic in `organize_prompts.py` for new prompt types
-3. Extend analysis capabilities in `analyze_agents.py` for deeper insights
-4. Consider adding new optimization tools for other aspects of the codebase
+1. **Create Backups**: Always back up important files before running any optimization tool
+2. **Review Changes**: Examine the changes suggested by the tools before applying them
+3. **Test After Changes**: Verify that the system still functions correctly after optimization
+4. **Document Updates**: Keep the optimization documentation up-to-date
 
-## See Also
+## Adding New Tools
 
-- [OPTIMIZATION.md](../OPTIMIZATION.md) - Comprehensive optimization recommendations
-- [docs/development.md](../docs/development.md) - General development guidelines
+When adding new optimization tools:
+
+1. Follow the existing naming and structure patterns
+2. Document the tool's purpose and usage
+3. Ensure the tool creates backups when modifying files
+4. Add appropriate error handling
+5. Update this README with the new tool's information
+
+## Monitoring Project Health
+
+The tools in this directory are designed to help maintain project health by:
+
+1. **Reducing Clutter**: Removing unnecessary files
+2. **Improving Organization**: Ensuring logical directory structures
+3. **Promoting Consistency**: Standardizing patterns across the codebase
+4. **Identifying Issues**: Highlighting potential problems
+
+By regularly using these tools, you can help ensure that the Agent Zero codebase remains clean, well-organized, and maintainable as it continues to evolve.
