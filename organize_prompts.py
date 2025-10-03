@@ -221,8 +221,10 @@ def main():
     if choice.lower() == 'y':
         implement_reorganization(categories, prompts_dir)
         print("\nRecommended Next Steps:")
-        print("1. Update any scripts or code that reference specific prompt files")
-        print("2. Review the reorganized structure to ensure it meets your needs")
+        print("1. Update any scripts or code that reference specific "
+              "prompt files")
+        print("2. Review the reorganized structure to ensure it meets "
+              "your needs")
         print("3. Run tests to verify functionality is preserved")
     else:
         print("\nNo changes were made. You can run this script again later "
